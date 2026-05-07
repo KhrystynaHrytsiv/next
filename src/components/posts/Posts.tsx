@@ -12,7 +12,7 @@ const Posts = () => {
             .then(data => setPosts(data))
     }, []);
     return (
-        <div>
+        <div >
             {posts.map(post => <Post post={post} key={post.id}/>)}
         </div>
     );
