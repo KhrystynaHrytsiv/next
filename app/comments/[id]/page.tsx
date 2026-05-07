@@ -1,7 +1,7 @@
 const CommentDetailsPage = () => {
     return (
         <div>
-x
+
         </div>
     );
 };

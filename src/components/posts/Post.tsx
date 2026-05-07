@@ -2,10 +2,10 @@ import {IPost} from "@/src/interfaces/IPost";
 
 const Post = ({post}:{post:IPost}) => {
     return (
-        <div>
+        <div className='border-1 flex-col gap-4 w-2/3 m-3 p-3'>
         <a href={`/posts/${post.id}`}>
-            <h4> {post.title}</h4>
-            <h5> {post.body}</h5>
+            <h4 className='text-xl font-semibold'> {post.title}</h4>
+            <h5 className='text-lg'> {post.body}</h5>
         </a>
 
         </div>
