@@ -10,7 +10,7 @@ const UserPage:FC<IProp> =  async ({params}) => {
      const user:IUser = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`).then(data => data.json());
 
     return (
-        <div>
+        <div className='m-10'>
             <h2>{user.name}</h2>
             <p>Username: {user.username}</p>
             <p>Email: {user.email}</p>
