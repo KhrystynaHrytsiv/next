@@ -7,7 +7,7 @@ const Users = async () => {
     return (
         <div>
             {users.map(user => <div key={user.id}>
-                <Link href={''}>{user.id} {user.name}</Link>
+                <Link href={'/users/' +user.id.toString()}>{user.id} {user.name}</Link>
             </div>)}
         </div>
     );
