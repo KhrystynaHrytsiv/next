@@ -1,13 +1,13 @@
-import {FC} from "react";
 import {IComment} from "@/src/interfaces/IComment";
+import {generalService} from "@/src/service/general";
+
 interface IProp{
     params:{id:string}
 }
 
-const CommentDetailsPage:FC<IProp> = async ({params}) => {
+const CommentDetailsPage = async ({params}:IProp) => {
     const {id} = await params;
-    const comment:IComment = await fetch(`https://jsonplaceholder.typicode.com/comments/${id}`).then(response => response.json());
-
+    const comment = await generalService.getById<IComment>('comments', id);
     return (
         <div className='m-10'>
             <div>postId: {comment.id}</div>

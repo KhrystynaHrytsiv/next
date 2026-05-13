@@ -1,16 +1,11 @@
-'use client'
-import {useEffect, useState} from "react";
-import {IPost} from "@/src/interfaces/IPost";
 import Post from "@/src/components/posts/Post";
+import {generalService} from "@/src/service/general";
+import {IPost} from "@/src/interfaces/IPost";
 
 
-const Posts = () => {
-    const [posts, setPosts] = useState<IPost[]>([]);
-    useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/posts')
-            .then(response => response.json())
-            .then(data => setPosts(data))
-    }, []);
+const Posts = async () => {
+    const posts = await generalService.getAll<IPost>('posts');
+
     return (
         <div >
             {posts.map(post => <Post post={post} key={post.id}/>)}

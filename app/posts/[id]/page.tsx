@@ -1,13 +1,13 @@
-import {FC} from "react";
 import {IPost} from "@/src/interfaces/IPost";
+import {generalService} from "@/src/service/general";
+
 interface IProp {
     params:{id:string}
 }
 
-const PostDetailsPage:FC<IProp> = async ({params}) => {
+const PostDetailsPage = async ({params}:IProp) => {
     const {id} = await params;
-    const post:IPost = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
-              .then(response => response.json())
+    const post = await generalService.getById<IPost>('posts', id);
     return (
         <div className='m-10'>
            <div> id: {post.id}</div>
