@@ -5,4 +5,3 @@ export const generalService = {
               .then(response => response.json())
 
 };
-
