@@ -1,0 +1,15 @@
+'use server';
+import {userSchema} from "@/lib/schema";
+export async function  createUser (formData:FormData):Promise<void> {
+    const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        password: formData.get('password'),
+    };
+    const result = userSchema.safeParse(data);
+    if (!result.success){
+        console.log('error');
+        return
+    }
+    console.log('success', result.data);
+}

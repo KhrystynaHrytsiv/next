@@ -1,35 +1,20 @@
-'use client'
-import {useForm} from "react-hook-form";
-import {UserFormData, userSchema} from "@/lib/schema";
-import {zodResolver} from "@hookform/resolvers/zod";
+import {createUser} from "@/app/actions/user";
 
 export default function Home() {
-    const {register, handleSubmit, formState:{errors}} = useForm<UserFormData>({resolver:zodResolver(userSchema)});
 
-    const onSubmit = async (data:UserFormData)=>{
-        const  res = await fetch('/api/users', {
-            method:'POST',
-            body: JSON.stringify(data)
-        });
-        const json = await res.json();
-        console.log(json);
-    }
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form action={createUser}>
           <div>
-              <input {...register('name')} placeholder={'name'}/>
-              {errors.name && (<p>{errors.name.message}</p>)}
+              <input name={'name'} placeholder={'name'}/>
           </div>
           <div>
-              <input {...register('email')} placeholder={'email'}/>
-              {errors.email && (<p>{errors.email.message}</p>)}
+              <input name={'email'} placeholder={'email'}/>
           </div>
           <div>
-              <input {...register('password')} placeholder={'password'}/>
-              {errors.password && (<p>{errors.password.message}</p>)}
+              <input name={'password'} placeholder={'password'}/>
           </div>
-          <button type={'submit'}>Send</button>
+          <button type='submit'>Send</button>
       </form>
     </>
   );
