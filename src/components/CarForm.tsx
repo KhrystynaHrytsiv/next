@@ -6,7 +6,7 @@ const CarForm = () => {
             <input type={'text'} placeholder={'brand'}/>
             <input type={'number'} placeholder={'price'}/>
             <input type={'number'} placeholder={'year'}/>
-            <button>Save</button>
+            <button type='submit'>Save</button>
         </form>
     );
 };

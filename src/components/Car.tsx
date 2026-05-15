@@ -7,9 +7,7 @@ interface IProp{
 
 const Car:FC<IProp> = ({car}) => {
     return (
-        <div>
-            <div className='text-lg w-50 border bg-rose-50 text-center '>{car.id}. {car.brand}</div>
-        </div>
+        <div className='text-lg m-2 border text-center bg-rose-100'>{car.id}. {car.brand}</div>
     );
 };
 

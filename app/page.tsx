@@ -6,7 +6,7 @@ export default function Home() {
     <>
         <CarForm/>
         <hr/>
-      <Cars/>
+        <Cars/>
     </>
   );
 }
