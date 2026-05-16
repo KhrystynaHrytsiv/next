@@ -7,5 +7,6 @@ export const carService = {
     createCar: async (data:CarFormData):Promise<void> => await fetch(`${baseUrl}/cars`,
         {method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(data)}).then(res => res.json())
+            body: JSON.stringify(data)})
+        .then(res => res.json())
 };
