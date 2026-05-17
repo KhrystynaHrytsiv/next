@@ -20,5 +20,6 @@ export const saveCar = async (formData:FormData):Promise<void> =>{
         return
     }
     await carService.createCar(result.data);
-    revalidatePath('/')
+    revalidatePath('/');
+
 };
