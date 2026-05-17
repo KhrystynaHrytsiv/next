@@ -1,5 +1,5 @@
 import {ICar} from "@/src/interfaces/ICar";
-import {CarFormData} from "@/src/schema/carSchema";
+import {CarFormData} from "@/src/interfaces/CarFormData";
 
 const baseUrl = 'http://owu.linkpc.net/carsAPI/v1';
 export const carService = {
